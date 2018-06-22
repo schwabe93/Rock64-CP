@@ -6,8 +6,9 @@ include_once('./include/config.php');
 $temp = shell_exec('cat /sys/class/thermal/thermal_zone*/temp');
 $temp = round($temp / 1000, 1);
 
-$cpuusage = 100 - shell_exec("vmstat | tail -1 | awk '{print $15}'");
-
+#$cpuusage = 100 - shell_exec("vmstat | tail -1 | awk '{print $15}'");
+$load = sys_getloadavg();
+$cpuusage = $load[0];
 $clock = '';
 /*$clock = shell_exec('cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq');
 	$clock = round($clock / 1000);*/
@@ -128,7 +129,7 @@ $memory_percentage = round(($memory_used) / $memory_total * 100);
 	<meta name="author" content="">
 	<link rel="shortcut icon" href="./static/images/raspberry.png" type="image/png" />
 	<link rel="icon" href="./static/images/raspberry.png" type="image/png" />
-	<title>GumCP Dashboard</title>
+	<title>PI-Face | <?php echo gethostname(); ?></title>
 	<link href="./static/css.php" rel="stylesheet" type="text/css">
 	<script src="./static/js.php" type="text/javascript">
 </script>
@@ -168,7 +169,7 @@ $(function() {
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="./index.php"><img src="./static/images/raspberry.png" />GumCP</a>
+				<a class="navbar-brand" href="./index.php"><img src="./static/images/raspberry.png" />PI-Face</a>
 			</div>
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav navbar-right">

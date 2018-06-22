@@ -6,6 +6,8 @@ define('SSH_USER', 'pi'); //your ssh username, default is "pi"
 define('SSH_PASS', 'raspberry'); //your ssh password, default is "raspberry"
 
 define('LOGIN_REQUIRED', true); //set to "true" if you want to enable a login system, or "false" to disable it
+define('LOGIN_USER', 'pi'); //set username for login
+define('LOGIN_PASS', 'coolkidsclub'); //set password for login
 
 define('GUMCP_DEBUG', true); //change to true to show PHP errors, or false to hide errors
 
@@ -81,25 +83,23 @@ else
 //dont touch from this line
 session_start();
 session_regenerate_id();
-if(!empty($_REQUEST['login_user']) && !empty($_REQUEST['login_pass']) && shell_exec("/var/www/html/GumCP/include/pass.sh '".escapeshellarg($_REQUEST['login_user'])."' '".escapeshellarg($_REQUEST['login_pass'])."'") == "0\n")
- 
+
+if(!empty($_REQUEST['login_user']) && !empty($_REQUEST['login_pass'])&& $_REQUEST['login_user'] == LOGIN_USER && $_REQUEST['login_pass'] == LOGIN_PASS)
 {
-	$_SESSION['LOGIN_USER'] = $_REQUEST['login_user'];
-	$_SESSION['LOGIN_PASS'] = $_REQUEST['login_pass'];
-	$USER =  $_SESSION['LOGIN_USER']; 
-	$PASS = $_SESSION['LOGIN_PASS'];
+	$_SESSION['LOGIN_USER'] = md5(LOGIN_USER);
+	$_SESSION['LOGIN_PASS'] = md5(LOGIN_PASS);
 }
-else
+elseif(!empty($_REQUEST['login_user']) && !empty($_REQUEST['login_pass']))
 {
-#	header("Location: ./login.php?action=incorrect_login");
-#	exit();
+	header("Location: ./login.php?action=incorrect_login");
+	exit();
 }
 
 
 
 if(LOGIN_REQUIRED==true)
 {
-	if(isset($_SESSION['LOGIN_USER']) && isset($_SESSION['LOGIN_PASS'])) 
+	if(isset($_SESSION['LOGIN_USER']) && $_SESSION['LOGIN_USER']==md5(LOGIN_USER) && isset($_SESSION['LOGIN_PASS']) && $_SESSION['LOGIN_PASS'] == md5(LOGIN_PASS))
 	{
 		
 	}
