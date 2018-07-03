@@ -36,7 +36,7 @@ $active_page = 'services';
 	<meta name="author" content="">
 	<link rel="shortcut icon" href="./static/images/raspberry.png" type="image/png" />
 	<link rel="icon" href="./static/images/raspberry.png" type="image/png" />
-	<title>GumCP Services</title>
+	<title>PI-Face |  Services</title>
 	<link href="./static/css.php" rel="stylesheet" type="text/css">
 	<script src="./static/js.php" type="text/javascript">
 </script>
@@ -55,7 +55,7 @@ $active_page = 'services';
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="./index.php"><img src="./static/images/raspberry.png" />GumCP</a>
+				<a class="navbar-brand" href="./index.php"><img src="./static/images/raspberry.png" />PI-Face</a>
 			</div>
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav navbar-right">

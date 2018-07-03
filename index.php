@@ -6,12 +6,10 @@ include_once('./include/config.php');
 $temp = shell_exec('cat /sys/class/thermal/thermal_zone*/temp');
 $temp = round($temp / 1000, 1);
 
-#$cpuusage = 100 - shell_exec("vmstat | tail -1 | awk '{print $15}'");
-$load = sys_getloadavg();
-$cpuusage = $load[0];
-$clock = '';
-/*$clock = shell_exec('cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq');
-	$clock = round($clock / 1000);*/
+$cpuusage = shell_exec("top -b -n 2 | grep Cpu | tail -1 | awk '{print $2 + $4}'");
+#$clock = '';
+#$clock = shell_exec('cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq');
+#	$clock = round($clock / 1000);
 
 
 
@@ -43,12 +41,12 @@ $load = sys_getloadavg();
 
 $processes = shell_exec("ps aux | wc -l");
 
-$top = shell_exec("top -b -n 1 | head -n 30  | tail -n 30");
+$top = shell_exec("top -b -n 2 | head -n 30  | tail -n 30");
 
 $users = shell_exec("w");
 $users = preg_replace('/^.+\n/', '', $users);
 
-$disks = shell_exec("df");
+$disks = shell_exec("df -h");
 
 $date = shell_exec("date");
 
@@ -59,7 +57,7 @@ $date = shell_exec("date");
 //memory usage
 if(MEMORY_CALCULATION_METHOD==1)
 {
-	$out = shell_exec('free -m');
+	$out = shell_exec('free -h');
 	preg_match_all('/\s+([0-9]+)/', $out, $matches);
 	list($memory_total, $memory_used, $memory_free, $memory_shared, $memory_buffers, $memory_cached) = $matches[1];
 
@@ -197,12 +195,12 @@ include_once('./include/menu.php');
 								</span>
 							</div>
 
-							<!--div class="col-xs-6 col-sm-3 text-center">
+						<!--	<div class="col-xs-6 col-sm-3 text-center">
 								<span class="chart" data-percent="<?php echo ($clock/1000)*100; ?>">
 									<span class="percent"><?php echo $clock; ?><i>MHz</i></span>
 									<span class="label">CPU Clock</span>
 								</span>
-							</div-->
+							</div> -->
 
 							<div class="col-xs-6 col-sm-3 text-center">
 								<span class="chart" data-percent="<?php echo $temp; ?>">
