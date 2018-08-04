@@ -39,7 +39,7 @@ $('iframe').load(function () {
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="./index.php"><img src="./static/images/raspberry.png" />PI-Face</a>
+				<a class="navbar-brand" href="./index.php"><img src="./static/images/pine64.png" />Rock64-CP</a>
 			</div>
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav navbar-right">
@@ -78,7 +78,7 @@ $('iframe').load(function () {
 </div>
 <footer class="footer">
 	<div class="container">
-		<p class="text-muted">GumCP <a href="https://github.com/gumslone/GumCP">GitHub</a>. <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=VCWHQPACTXV5N"><img src="./static/images/Donate-PayPal-green.svg"/></a></p>
+		<p class="text-muted">Rock64-CP <a href="https://github.com/schwabe93/Rock64-CP">GitHub</a>. <a href="https://www.paypal.me/gemsa"><img src="./static/images/Donate-PayPal-green.svg"/></a></p>
 	</div>
 </footer>
 <div id="dialog-placeholder"></div>
