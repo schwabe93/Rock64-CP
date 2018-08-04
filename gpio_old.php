@@ -160,7 +160,7 @@ $(document).ready(function(){
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="./index.php"><img src="./static/images/raspberry.png" />GumCP</a>
+				<a class="navbar-brand" href="./index.php"><img src="./static/images/pine64.png" />GumCP</a>
 			</div>
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav navbar-right">

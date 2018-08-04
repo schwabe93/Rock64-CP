@@ -12,8 +12,8 @@ $active_page = $_REQUEST['module'];
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="">
 	<meta name="author" content="">
-	<link rel="shortcut icon" href="./static/images/raspberry.png" type="image/png" />
-	<link rel="icon" href="./static/images/raspberry.png" type="image/png" />
+	<link rel="shortcut icon" href="./static/images/pine64.png" type="image/png" />
+	<link rel="icon" href="./static/images/pine64.png" type="image/png" />
 	<title><?php echo $gumcp_modules[$_REQUEST['module']]['module_title']; ?></title>
 	<link href="./static/css.php" rel="stylesheet" type="text/css">
 	<script src="./static/js.php" type="text/javascript"></script>

@@ -125,9 +125,9 @@ $memory_percentage = round(($memory_used) / $memory_total * 100);
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="">
 	<meta name="author" content="">
-	<link rel="shortcut icon" href="./static/images/raspberry.png" type="image/png" />
-	<link rel="icon" href="./static/images/raspberry.png" type="image/png" />
-	<title>PI-Face | <?php echo gethostname(); ?></title>
+	<link rel="shortcut icon" href="./static/images/pine64.png" type="image/png" />
+	<link rel="icon" href="./static/images/pine64.png" type="image/png" />
+	<title>Rock64-CP | <?php echo gethostname(); ?></title>
 	<link href="./static/css.php" rel="stylesheet" type="text/css">
 	<script src="./static/js.php" type="text/javascript">
 </script>
@@ -167,7 +167,7 @@ $(function() {
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="./index.php"><img src="./static/images/raspberry.png" />PI-Face</a>
+				<a class="navbar-brand" href="./index.php"><img src="./static/images/pine64.png" />Rock64-CP</a>
 			</div>
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav navbar-right">
